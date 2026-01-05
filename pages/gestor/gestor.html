@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Employability | Gestor</title>
+  <link rel="stylesheet" href="../../styles/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">GESTOR Dashboard</div>
+      <div class="right">
+        <span class="badge" id="meBadge">...</span>
+        <button class="btn" id="btnReload">Reload</button>
+        <button class="btn danger" id="btnLogout">Logout</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Create Vacancy</h2>
+        <div class="row" style="margin-top:12px">
+          <input id="v_title" placeholder="Title"/>
+          <input id="v_company" placeholder="Company"/>
+        </div>
+        <div class="row">
+          <input id="v_salary" placeholder="Salary Range (e.g. 3M - 4M COP)"/>
+          <input id="v_seniority" placeholder="Seniority (e.g. Junior)"/>
+        </div>
+        <div class="row">
+          <select id="v_location">
+            <option value="MEDELLIN">MEDELLIN</option>
+            <option value="BARRANQUILLA">BARRANQUILLA</option>
+            <option value="BOGOTA">BOGOTA</option>
+            <option value="CARTAGENA">CARTAGENA</option>
+          </select>
+          <select id="v_modality">
+            <option value="REMOTE">REMOTE</option>
+            <option value="HYBRID">HYBRID</option>
+            <option value="ON_SITE">ON_SITE</option>
+          </select>
+        </div>
+        <div class="row">
+          <input id="v_max" type="number" min="1" placeholder="Max Applicants"/>
+          <input id="v_tech" placeholder="Technologies (comma separated)"/>
+        </div>
+        <textarea id="v_desc" placeholder="Description"></textarea>
+        <textarea id="v_soft" placeholder="Soft Skills"></textarea>
+        <button class="btn primary" id="btnCreate">Create</button>
+      </div>
+
+      <div class="card">
+        <h2>Applications</h2>
+        <div class="muted">Puedes filtrar por vacancyId.</div>
+        <div class="row" style="margin-top:12px">
+          <input id="a_vacancyId" placeholder="vacancyId (optional)"/>
+          <button class="btn" id="btnLoadApps">Load</button>
+        </div>
+        <div id="appsTableWrap"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h2>Manage Vacancies</h2>
+      <div class="muted">Edit / Toggle Active</div>
+      <div id="vacanciesTableWrap" style="margin-top:12px"></div>
+    </div>
+  </div>
+
+  <script type="module" src="./js/gestor.js"></script>
+</body>
+</html>

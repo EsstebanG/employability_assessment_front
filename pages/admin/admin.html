@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Employability | Admin</title>
+  <link rel="stylesheet" href="../../styles/styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">ADMIN Dashboard</div>
+      <div class="right">
+        <span class="badge" id="meBadge">...</span>
+        <button class="btn" id="btnReload">Reload</button>
+        <button class="btn danger" id="btnLogout">Logout</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Users</h2>
+        <div class="muted">ADMIN can list users and update roles.</div>
+        <button class="btn" id="btnLoadUsers" style="margin-top:12px">Load Users</button>
+        <div id="usersTableWrap" style="margin-top:12px"></div>
+      </div>
+
+      <div class="card">
+        <h2>Applications</h2>
+        <div class="muted">ADMIN can list applications too.</div>
+        <div class="row" style="margin-top:12px">
+          <input id="a_vacancyId" placeholder="vacancyId (optional)"/>
+          <button class="btn" id="btnLoadApps">Load</button>
+        </div>
+        <div id="appsTableWrap"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h2>Vacancies</h2>
+      <div class="muted">ADMIN has full access (create/update/toggle)</div>
+      <div id="vacanciesTableWrap" style="margin-top:12px"></div>
+    </div>
+  </div>
+
+  <script type="module" src="./js/admin.js"></script>
+</body>
+</html>
