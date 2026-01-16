@@ -1,39 +1,40 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Employability | Coder</title>
-  <link rel="stylesheet" href="../../styles/styles.css"/>
-</head>
-<body>
-  <div class="container">
-    <div class="nav">
-      <div class="brand">CODER Dashboard</div>
-      <div class="right">
-        <span class="badge" id="meBadge">...</span>
-        <button class="btn" id="btnReload">Reload</button>
-        <button class="btn danger" id="btnLogout">Logout</button>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title> Employability | Coder </title>
+    <link rel="stylesheet" href="../../styles/styles.css"/>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="nav">
+        <div class="brand"> CODER Dashboard </div>
+        <div class="right">
+          <span class="badge" id="meBadge"> Welcome! </span>
+          <button class="btn" id="btnReload"> Reload </button>
+          <button class="btn danger" id="btnLogout"> Logout </button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2> Vacancies </h2>
+          <div class="muted"> You can apply if there is space available. </div>
+          <div id="vacanciesList" style="margin-top:12px"></div>
+        </div>
+
+        <div class="card">
+          <h2> My Profile </h2>
+          <div class="muted"> Endpoint: GET /users/me </div>
+          <table class="table">
+            <tbody id="meTable"></tbody>
+          </table>
+        </div>
       </div>
     </div>
 
-    <div class="grid">
-      <div class="card">
-        <h2>Vacancies</h2>
-        <div class="muted">Puedes postularte si hay cupo disponible.</div>
-        <div id="vacanciesList" style="margin-top:12px"></div>
-      </div>
-
-      <div class="card">
-        <h2>My Profile</h2>
-        <div class="muted">Endpoint: GET /users/me</div>
-        <table class="table">
-          <tbody id="meTable"></tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <script type="module" src="./js/coder.js"></script>
-</body>
+    <script type="module" src="../../js/coder/coder.js"></script>
+  </body>
 </html>

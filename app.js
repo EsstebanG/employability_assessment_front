@@ -1,8 +1,8 @@
-console.log('app.js loaded');
+console.log('app.js loaded successfully!');
 
-// ---------------- CONFIG ----------------
-const API_URL = 'http://localhost:3000';
-const API_KEY = 'employability-dev-4f9c8a2b7d1e6c90';
+// ---------------- CONFIG VARIABLES ----------------
+const API_URL = 'http://localhost:3000'; // <-- URL variable.
+const API_KEY = 'employability-dev-4f9c8a2b7d1e6c90'; // <-- X-API-KEY variable.
 
 // ---------------- UTILS ----------------
 function setMessage(msg) {
@@ -27,7 +27,7 @@ function login() {
       localStorage.setItem('token', response.data.accessToken);
       window.location.href = 'dashboard.html';
     })
-    .catch(() => alert('Login error'));
+    .catch(() => alert('Login error!'));
 }
 
 
@@ -44,8 +44,8 @@ function register() {
     }),
   })
     .then(res => res.json())
-    .then(() => setMessage('Registered successfully'))
-    .catch(() => setMessage('Register error'));
+    .then(() => setMessage('Registered successfully!'))
+    .catch(() => setMessage('Register error!'));
 }
 
 // ---------------- VACANCIES ----------------
@@ -66,7 +66,7 @@ function loadVacancies() {
   })
     .then(res => {
       if (!res.ok) {
-        throw new Error('Unauthorized');
+        throw new Error('Unauthorized!');
       }
       return res.json();
     })
@@ -85,7 +85,7 @@ function loadVacancies() {
     })
     .catch(err => {
       console.error(err);
-      alert('Session expired or unauthorized');
+      alert('Session expired or unauthorized!');
     });
 }
 
@@ -103,6 +103,6 @@ function apply(vacancyId) {
     body: JSON.stringify({ vacancyId }),
   })
     .then(res => res.json())
-    .then(() => alert('Applied successfully'))
-    .catch(() => alert('Application error'));
+    .then(() => alert('Applied successfully!'))
+    .catch(() => alert('Application error!'));
 }

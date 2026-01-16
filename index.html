@@ -1,71 +1,69 @@
 <!doctype html>
 <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title> Employability | Auth </title>
+        <link rel="stylesheet" href="./styles/styles.css" />
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Employability | Auth</title>
-    <link rel="stylesheet" href="./styles/styles.css" />
-</head>
-
-<body>
-    <div class="container">
-        <div class="nav">
-            <div class="brand">Employability Platform</div>
-            <div class="right"><span class="badge">JWT + API Key</span></div>
-        </div>
-
-        <div class="grid">
-            <div class="card">
-                <h2>Login</h2>
-                <div class="muted">Usa admin@riwi.io / gestor@riwi.io o un coder registrado.</div>
-                <div style="margin-top:12px">
-                    <input id="l_email" placeholder="Email" />
-                    <input id="l_pass" type="password" placeholder="Password" />
-                    <button class="btn primary" id="btnLogin">Login</button>
-                </div>
+    <body>
+        <div class="container">
+            <div class="nav">
+                <div class="brand"> Employability Platform </div>
+                <div class="right"><span class="badge"> Welcome! </span></div>
             </div>
 
-            <div class="card">
-                <h2>Register (Coder)</h2>
-                <div class="muted">El rol por defecto al registrarse es CODER.</div>
-                <div style="margin-top:12px">
-                    <input id="r_name" placeholder="Name" />
-                    <input id="r_email" placeholder="Email" />
-                    <input id="r_pass" type="password" placeholder="Password" />
-                    <button class="btn primary" id="btnRegister">Register</button>
+            <div class="grid">
+                <div class="card">
+                    <h2>Login</h2>
+                    <div class="muted"> Use admin@riwi.io / gestor@riwi.io or a registered coder. </div>
+                    <div style="margin-top:12px">
+                        <input id="l_email" placeholder="Enter your email address..." />
+                        <input id="l_pass" type="password" placeholder="Enter your password..." />
+                        <button class="btn primary" id="btnLogin"> Login </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2> Register (Coder) </h2>
+                    <div class="muted"> The default role upon registration is CODER. </div>
+                    <div style="margin-top:12px">
+                        <input id="r_name" placeholder="Enter your full name..." />
+                        <input id="r_email" placeholder="Enter your email address..." />
+                        <input id="r_pass" type="password" placeholder="Enter your password..." />
+                        <button class="btn primary" id="btnRegister"> Register </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script type="module">
-        import { login, register } from './js/auth.js';
-        import { toast } from './js/ui.js';
+        <script type="module">
+            import { login, register } from './js/auth.js';
+            import { toast } from './js/ui.js';
 
-        document.getElementById('btnLogin').addEventListener('click', async () => {
-            try {
-                await login(
-                    document.getElementById('l_email').value.trim(),
-                    document.getElementById('l_pass').value
-                );
-            } catch (e) {
-                toast(e.message, 'err');
-            }
-        });
+            document.getElementById('btnLogin').addEventListener('click', async () => {
+                try {
+                    await login(
+                        document.getElementById('l_email').value.trim(),
+                        document.getElementById('l_pass').value
+                    );
+                } catch (e) {
+                    toast(e.message, 'err');
+                }
+            });
 
-        document.getElementById('btnRegister').addEventListener('click', async () => {
-            try {
-                await register(
-                    document.getElementById('r_name').value.trim(),
-                    document.getElementById('r_email').value.trim(),
-                    document.getElementById('r_pass').value
-                );
-            } catch (e) {
-                toast(e.message, 'err');
-            }
-        });
-    </script>
-</body>
-
+            document.getElementById('btnRegister').addEventListener('click', async () => {
+                try {
+                    await register(
+                        document.getElementById('r_name').value.trim(),
+                        document.getElementById('r_email').value.trim(),
+                        document.getElementById('r_pass').value
+                    );
+                } catch (e) {
+                    toast(e.message, 'err');
+                }
+            });
+        </script>
+    </body>
 </html>

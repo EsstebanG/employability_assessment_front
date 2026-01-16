@@ -1,7 +1,7 @@
-import { requireAuth } from './guard.js';
-import { logout } from './auth.js';
-import { api } from './http.js';
-import { toast } from './ui.js';
+import { requireAuth } from '../guard.js';
+import { logout } from '../auth.js';
+import { api } from '../http.js';
+import { toast } from '../ui.js';
 
 const me = requireAuth(['ADMIN']);
 if (!me) {}

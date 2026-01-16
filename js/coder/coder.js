@@ -1,9 +1,9 @@
-import { requireAuth } from './guard.js';
-import { logout } from './auth.js';
-import { api } from './http.js';
-import { toast } from './ui.js';
+import { requireAuth } from '../guard.js';
+import { logout } from '../auth.js';
+import { api } from '../http.js';
+import { toast } from '../ui.js';
 
-const me = requireAuth(['CODER', 'ADMIN', 'GESTOR']); // coder page, pero si admin/gestor entra lo redirige guard
+const me = requireAuth(['CODER', 'ADMIN', 'GESTOR']);
 if (!me) {}
 
 document.getElementById('btnLogout').addEventListener('click', logout);
